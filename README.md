@@ -1,0 +1,2 @@
+# API---Assignment-
+A company has contacted you to develop a REST interface that utilises JSON-RPC, XML-RPC and GraphQL as many of the people in the company are using different systems to interact with the existing customers. To tie all the technologies together, they wish for Flask to be used as a REST interface that will be provided to the customers. The company has mentioned that they do not have a complete Python implementation and have asked that some components be developed in the existing JSON/XML RPC server examples.
