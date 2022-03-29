@@ -1,0 +1,223 @@
+INFO:root:called back json pc server
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:4000
+DEBUG:urllib3.connectionpool:http://localhost:4000 "POST /jsonrpc HTTP/1.1" 200 57
+INFO:werkzeug:127.0.0.1 - - [03/Mar/2022 12:26:12] "GET /getalldataRPC HTTP/1.1" 200 -
+INFO:root:called back json pc server
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:4000
+ERROR:flaskserver:Exception on /getalldataRPC [GET]
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017170EA8BB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4000): Max retries exceeded with url: /jsonrpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017170EA8BB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\35383\Desktop\Four year\Semester 2\Web Services\Assigment\flaskserver.py", line 89, in getalldatarpc
+    # Example calling the echo method
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=4000): Max retries exceeded with url: /jsonrpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017170EA8BB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:werkzeug:127.0.0.1 - - [10/Mar/2022 11:57:45] "[35m[1mGET /getalldataRPC HTTP/1.1[0m" 500 -
+INFO:root:called back json pc server
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:4000
+ERROR:flaskserver:Exception on /getalldataRPC [GET]
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017170F0BCD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4000): Max retries exceeded with url: /jsonrpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017170F0BCD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\35383\Desktop\Four year\Semester 2\Web Services\Assigment\flaskserver.py", line 89, in getalldatarpc
+    # Example calling the echo method
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=4000): Max retries exceeded with url: /jsonrpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017170F0BCD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:werkzeug:127.0.0.1 - - [10/Mar/2022 11:57:52] "[35m[1mGET /getalldataRPC HTTP/1.1[0m" 500 -
+INFO:root:called back json pc server
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:4000
+ERROR:flaskserver:Exception on /getalldataRPC [GET]
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017170F0BBE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4000): Max retries exceeded with url: /jsonrpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017170F0BBE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\35383\Desktop\Four year\Semester 2\Web Services\Assigment\flaskserver.py", line 89, in getalldatarpc
+    # Example calling the echo method
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\35383\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=4000): Max retries exceeded with url: /jsonrpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017170F0BBE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:werkzeug:127.0.0.1 - - [10/Mar/2022 11:58:19] "[35m[1mGET /getalldataRPC HTTP/1.1[0m" 500 -
