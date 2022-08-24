@@ -1,0 +1,13 @@
+## dictionary where the line from 
+## text will be stored 
+
+dict1 = {}
+
+## creating dictionary 
+
+with open("products.txt") as fh:
+
+    for line in fh:
+	
+	     description = line.strip()
+		 print(description)

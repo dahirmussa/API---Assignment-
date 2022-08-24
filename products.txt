@@ -1,0 +1,14 @@
+code - ITEM - qty_in_stock - unit_price
+234 - Arm Rest - 1 - 40.50
+1351 - Bench seat - 4 - 20.10
+453411 - Bucket seat - 4 - 5.10
+7811 - Children and baby car seat - 5 - 20.50
+13231 - Fastener - 2 - 20.10
+23411 - Headrest - 5 - 22.10
+11 - Seat belt - 10 - 120.10
+181 - Seat bracket - 22 - 34.10
+711 - Seat cover- 30 - 230.10
+14561 - Seat track - 50 - 23.10
+1134 - Other seat components - 2 - 20.10
+11311 - Back seat - 10 - 202.10
+234234 - Front seat - 11 - 210.10
